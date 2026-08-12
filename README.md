@@ -14,6 +14,9 @@ Quest OS 是一个基于 Notion 的极简个人任务系统模板。它只保留
 - Projects：记录项目状态、完成标准和目标日期。
 - Tasks：所有可执行任务的唯一入口。
 - Dashboard：Active Projects、Inbox、Today、Upcoming、Waiting & Blocked。
+- 两层任务树：工作块作为父任务，真正可执行的动作作为叶子任务。
+
+推荐交互方式是直接用自然语言告诉 Codex 要做什么。Codex 负责判断项目、工作块、任务、状态和关系；手机端主要用于查看、快速记入 Inbox 和把任务标为 Done。
 
 字段与手动配置说明见 [docs/schema.md](docs/schema.md)。
 
@@ -37,7 +40,7 @@ Quest OS 是一个基于 Notion 的极简个人任务系统模板。它只保留
 
 Notion 中的真实数据由 Notion 云端保留，GitHub 不保存也不恢复这些数据。若需要防范误删或账号问题，应另行定期导出 Notion；这与换机接续是两套机制。
 
-目前不包含自动化同步、提醒桥接、后端、PWA、XP、等级、装备或成就系统。
+任务树最多两层，不继续扩展为复杂依赖图。目前不包含自动化同步、提醒桥接、后端、PWA、XP、等级、装备或成就系统。
 
 ## License
 

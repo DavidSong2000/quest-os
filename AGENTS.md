@@ -11,6 +11,9 @@
 - 描述不完整但值得保留的任务可以进入 Inbox。
 - 日期不确定时保持为空，不得编造硬截止日期。
 - 旧知识库和历史资料优先通过 Source 链接，不默认迁入任务系统。
+- 需要分块时只使用两层结构：工作块作为父任务，叶子任务必须是可执行动作。
+- 不得把项目、工作块和叶子任务继续递归成复杂依赖树。
+- Dashboard 的行动视图优先只显示存在 Parent Task 的叶子任务，避免父子同时出现造成重复感。
 
 ## Public/private boundary
 
@@ -22,6 +25,6 @@
 ## Scope
 
 - 遵循 KISS 和 YAGNI。
-- v1 只维护 Projects、Tasks 和 Dashboard。
+- v1 只维护 Projects、Tasks、两层任务关系和 Dashboard。
 - 不为未确认需求增加数据库、字段、自动化或游戏化机制。
 - Apple Alarm、外部日历和提醒同步不属于 v1。

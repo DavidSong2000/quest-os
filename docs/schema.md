@@ -38,8 +38,10 @@ Quest OS v1 使用两个数据库。真实数据保存在用户自己的 Notion 
 | Priority | Select | Low、Medium、High |
 | Done Criteria | Text | 可验证的完成条件 |
 | Source | URL | 旧页面或外部资料链接 |
+| Parent Task | Relation | 可选父工作块；自关联到 Tasks |
+| Subtasks | Relation | Parent Task 的双向子任务关系 |
 
-任务细节写在任务页面正文，不建立重复的大段文本属性。v1 不包含 Milestone 类型、子任务、自定义提醒等级或 Apple Alarm 同步。
+任务细节写在任务页面正文，不建立重复的大段文本属性。任务层级最多两层：父任务表示工作块，子任务表示可执行动作。v1 不包含 Milestone 类型、自定义提醒等级或 Apple Alarm 同步。
 
 ## Views
 
@@ -51,11 +53,11 @@ Projects：
 Tasks：
 
 - Inbox：Status 为 Inbox。
-- Today：Status 为 Next 或 Doing，且 Do Date 为今天或早于今天。
-- Upcoming：Status 为 Next 或 Doing，且 Do Date 晚于今天。
-- Waiting & Blocked：Status 为 Waiting 或 Blocked。
+- Today：Status 为 Doing，且 Parent Task 不为空；表示当前正在做的叶子任务。
+- Upcoming：Status 为 Next，且 Parent Task 不为空；表示接下来可做的叶子任务。
+- Waiting & Blocked：Status 为 Waiting 或 Blocked，且 Parent Task 不为空。
 
-连接器已建立这些视图，但无法可靠表达 Today 和 Upcoming 的相对日期条件。请在 Notion 界面中补上上述 Do Date 过滤；不要增加辅助日期字段。
+Do Date 只在用户明确安排处理日期时填写；Due Date 只表示真实目标或截止日期。Dashboard 不依赖臆测日期，父工作块留在项目页面的工作树中，避免父子同时出现在行动视图。
 
 ## Dashboard
 
