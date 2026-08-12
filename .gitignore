@@ -1,0 +1,15 @@
+# Local environment and secrets
+.env
+.env.*
+*.local.md
+secrets.*
+state/*.local.md
+state/private/
+data/private/
+exports/private/
+
+# Authentication tokens and credential files
+*token*
+*credential*
+credentials.json
+client_secret*.json
